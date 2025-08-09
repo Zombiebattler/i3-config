@@ -1,25 +1,57 @@
-#
+# 
 # Include Configs
-#
 include ~/.config/i3/configs/default.conf
-include ~/.config/i3/configs/windows.conf
+#include ~/.config/i3/configs/windows.conf
 
 #
 # Custom Keybinds
-#
 bindsym $mod+x exec ~/.config/i3/scripts/i3_lock
 bindsym $mod+Return exec kitty
+bindsym $mod+d exec --no-startup-id rofi -show drun
 
 #
 # exec's
-#
 exec_always feh --bg-fill ~/.config/i3/wallpaper.jpg
 exec_always picom -f
 
 #
-# i3status bar
+# Window Config
+gaps inner 10
+gaps outer 5
+default_border pixel 1
+
 #
+# Window Colors
+set $bgcolor    #411313
+set $in-bgcolor #36363680
+set $text       #ffffff
+set $u-bgcolor  #ff0000
+set $indicator  #a8a3c1
+set $in-text    #969696
+
+#
+#                       border          background      text            indicator (a line which shows where the next window will be placed)     
+client.focused          $bgcolor        $bgcolor        $text           $indicator
+client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
+client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
+client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor 
+
+#
+# i3status bar
 bar {
-	#font pango: Droid Sans Mono 11
+	font pango: MesloLGS NF
     status_command i3status -c ~/.config/i3/configs/i3status.conf
+    i3bar_command i3bar --transparency
+    tray_output none
+    colors {                                                                                                                     
+        background #00000000                                                                                                    
+        statusline #FFFFFF                                                                                                      
+        separator  #FFFFFF          
+        #                  border       background  text                                                                                                                                                                                                                   
+        focused_workspace  #411313      #00000000   #FFFFFF                                                                            
+        active_workspace   #411313      #00000000   #FFFFFF                                                                            
+        inactive_workspace #00000000    #00000000   #FFFFFF                                                                          
+        urgent_workspace   #FF0000      #00000000   #FFFFFF                                                                       
+    }                                                                                                                       
+    workspace_buttons yes                                                                                               
 }
