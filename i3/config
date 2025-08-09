@@ -1,0 +1,25 @@
+#
+# Include Configs
+#
+include ~/.config/i3/configs/default.conf
+include ~/.config/i3/configs/windows.conf
+
+#
+# Custom Keybinds
+#
+bindsym $mod+x exec ~/.config/i3/scripts/i3_lock
+bindsym $mod+Return exec kitty
+
+#
+# exec's
+#
+exec_always feh --bg-fill ~/.config/i3/wallpaper.jpg
+exec_always picom -f
+
+#
+# i3status bar
+#
+bar {
+	#font pango: Droid Sans Mono 11
+    status_command i3status -c ~/.config/i3/configs/i3status.conf
+}
