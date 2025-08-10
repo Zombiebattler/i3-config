@@ -4,7 +4,7 @@ ZSH_CONFIG_URL="https://raw.githubusercontent.com/Zombiebattler/linux-customizat
 
 # Software
 sudo pacman -Syu --noconfirm
-sudo pacman -S cowsay zsh feh picom kitty mtr curl ttf-droid nerd-fonts rofi flatpak --noconfirm
+sudo pacman -S cowsay zsh feh picom kitty mtr curl ttf-droid nerd-fonts rofi flatpak pacman-contrib --noconfirm
 sudo pacman -S --needed base-devel git --noconfirm
 
 # yay
@@ -14,7 +14,7 @@ cd yay
 makepkg -si --noconfirm
 cd ..
 rm -rf "$HOME/yay"
-yay -S i3lock-color --noconfirm
+yay -S i3lock-color
 
 # oh-my-zsh + plugins & config >
 ZSH_CUSTOM="${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"

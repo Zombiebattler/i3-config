@@ -42,7 +42,8 @@ client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcol
 # i3status bar
 bar {
 	font pango: MesloLGS NF
-    status_command i3status -c ~/.config/i3/configs/i3status.conf
+    status_command i3blocks -c ~/.config/i3/configs/i3blocks.conf
+    position top
     i3bar_command i3bar --transparency
     tray_output none
     colors {                                                                                                                     
