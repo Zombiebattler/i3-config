@@ -54,7 +54,11 @@ find "$HOME/.config/i3/scripts" -type f -exec chmod +x {} \;
 # Weitere i3-configs kopieren
 cp -R ~/i3-config/i3/configs/* "$HOME/.config/i3/configs/"
 
-
+mkdir -p "$HOME/.config/gtk-3.0"
+cat > "$HOME/.config/gtk-3.0/settings.ini" <<EOF
+[Settings]
+gtk-application-prefer-dark-theme=1
+EOF
 
 # Done.
 echo "✅ Done"
