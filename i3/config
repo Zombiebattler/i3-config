@@ -1,3 +1,5 @@
+set $mod Mod4
+
 # 
 # Include Configs
 include ~/.config/i3/configs/default.conf
