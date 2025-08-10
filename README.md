@@ -2,7 +2,11 @@
 personal i3 Config
 
 
-#required pacages
+## How-To Install
 
+Download 'Install.sh'
+Run it in the home folder (/home/user)
 
-rofi picom kitty i3lock
+after the instalation close all terminals
+
+open a termianl and go throuth the p10k configuration 

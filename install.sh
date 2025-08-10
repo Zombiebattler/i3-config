@@ -4,7 +4,7 @@ ZSH_CONFIG_URL="https://raw.githubusercontent.com/Zombiebattler/linux-customizat
 
 # Software
 sudo pacman -Syu --noconfirm
-sudo pacman -S cowsay zsh feh picom kitty mtr curl ttf-droid nerd-fonts rofi --noconfirm
+sudo pacman -S cowsay zsh feh picom kitty mtr curl ttf-droid nerd-fonts rofi flatpak --noconfirm
 sudo pacman -S --needed base-devel git --noconfirm
 
 # yay
@@ -27,6 +27,9 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM}/
 
 [ -f "$HOME/.zshrc" ] && cp "$HOME/.zshrc" "$HOME/.zshrc.backup"
 curl -fsSL "$ZSH_CONFIG_URL" -o "$HOME/.zshrc"
+
+curl -fsSL "https://raw.githubusercontent.com/Zombiebattler/linux-customization/refs/heads/main/scripts/flatpak-syslink.sh" -o "$HOME/flatpak-symlink.sh"
+chmod +x "$HOME/flatpak-symlink.sh"
 
 # Zielverzeichnisse erstellen
 mkdir -p "$HOME/.config/i3/configs"
@@ -60,5 +63,6 @@ cat > "$HOME/.config/gtk-3.0/settings.ini" <<EOF
 gtk-application-prefer-dark-theme=1
 EOF
 
+rm -rf ~/i3-config
 # Done.
 echo "✅ Done"
