@@ -51,10 +51,10 @@ bar {
         statusline #FFFFFF                                                                                                      
         separator  #FFFFFF          
         #                  border       background  text                                                                                                                                                                                                                   
-        focused_workspace  #411313      #00000000   #FFFFFF                                                                            
-        active_workspace   #411313      #00000000   #FFFFFF                                                                            
-        inactive_workspace #00000000    #00000000   #FFFFFF                                                                          
-        urgent_workspace   #FF0000      #00000000   #FFFFFF                                                                       
+        focused_workspace  $bgcolor      #00000000   $text                                                                            
+        active_workspace   $bgcolor      #00000000   $text                                                                            
+        inactive_workspace #00000000    #00000000   $text                                                                          
+        urgent_workspace   #FF0000      #00000000   $text                                                                       
     }                                                                                                                       
     workspace_buttons yes                                                                                               
 }
